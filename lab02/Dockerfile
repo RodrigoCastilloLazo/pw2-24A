@@ -10,7 +10,7 @@ RUN git clone https://github.com/RodrigoCastilloLazo/pw2-24A.git .
 
 RUN cp -r pw2-24A/lab02/exercises/* /var/www/html
 
-EXPOSE 8085
+EXPOSE 8084
 
 CMD ["apache2ctl", "-D", "FOREGROUND"]
 
