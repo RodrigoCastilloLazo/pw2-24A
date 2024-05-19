@@ -80,7 +80,6 @@ body {
 }
 
 #login #login-contenido .boton input{
-	background: url(../imagenes/bn/btn-boton.jpg) no-repeat;
 	color: #fff;
 	border: 2px solid black;
 	height: 24px;
@@ -97,7 +96,6 @@ body {
 	
 }
 #login #login-contenido #botones #continuar{
-	background: url(../imagenes/bn/btn-continuar.jpg) no-repeat;
 	color: #fff;
 	height: 25px;
 	float: left;
@@ -110,7 +108,6 @@ body {
 }
 
 #login #login-contenido #botones #regresar{
-	background: url(../imagenes/bn/btn-regresar.jpg) no-repeat;
 	color: #fff;
 	height: 25px;
 	float: left;
