@@ -1,0 +1,518 @@
+body {
+    background-color: #f0f0f0;
+    color: #121212;
+    font-family: 'arial';
+    overflow-x:hidden;
+    position: relative;
+    text-align: left;
+    margin: 0 auto;
+}
+
+#contenedor {
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 998px;
+}
+
+#cabecera {
+    height: 90px;
+    position: relative;
+    background-color: white;
+}
+
+#cabecera #logo-multired{
+    left: 0px;
+    position: absolute;
+    top: 10px;
+}
+
+#cabecera #logo-bn {
+    right: 0px;
+    position: absolute;
+    top: 33px;
+}
+
+#cuerpo{
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0 0;
+    position: relative;
+    width: 905px;
+}
+
+#cuerpo h1{
+    color: #343434;
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+}
+
+#cuerpo h1 img{
+    margin: 0px 12px 0px 0px;
+}
+
+#cuerpo h1 span{
+    color: #c21315;
+}
+
+#pie-pagina{
+    text-align: center;
+    padding: 60px 0px 65px 0px;
+    width: 100%;
+}
+
+#pie-pagina #titulo-pie-pagina{
+    color: #373737;
+    font: bold 12px arial;
+    padding: 0px 0px 8px 0px;
+}
+
+#pie-pagina #oficinas{
+    color: #5e5e5f;
+    font: 11px arial;
+}
+
+#login #login-contenido .boton {
+    border-top: 1px dashed rgb(184, 184, 184);
+    margin: 20px 0px 0px;
+    padding: 15px 0px 0px;
+    text-align: center;
+}
+
+#login #login-contenido .boton input{
+	background: url(../imagenes/bn/btn-boton.jpg) no-repeat;
+	color: #fff;
+	border: 2px solid black;
+	height: 24px;
+	font: 14px/24px 'daxcompact-mediumregular';
+	margin: 10px 30px 0px 30px;
+	text-transform: uppercase;
+	width: 110px;/*72px;*/
+	cursor:pointer;
+	text-align:center;
+}
+
+#login #login-contenido #botones{
+	padding: 0px 0px 0px 0px;
+	
+}
+#login #login-contenido #botones #continuar{
+	background: url(../imagenes/bn/btn-continuar.jpg) no-repeat;
+	color: #fff;
+	height: 25px;
+	float: left;
+	font: 14px/24px 'daxcompact-mediumregular';
+	margin: 0px 30px 0px 20px;/*30der */
+	text-transform: uppercase;
+	width: 110px; /* 90 */ 
+	cursor:pointer;
+	text-align: center;
+}
+
+#login #login-contenido #botones #regresar{
+	background: url(../imagenes/bn/btn-regresar.jpg) no-repeat;
+	color: #fff;
+	height: 25px;
+	float: left;
+	font: 14px/24px 'daxcompact-mediumregular';
+	margin: 0px 30px 0px 30px;
+	text-transform: uppercase;
+	width: 110px; /* 76 */ 
+	cursor:pointer;
+	text-align:center;
+}
+
+#login #login-contenido{
+    background-color:#fff;
+    border-left: 1px solid #d4d4d4;
+    color: #555555;
+    font: 12px arial;
+    margin: 0 auto;
+    position: relative;
+    padding: 18px 54px 10px 52px; 
+    overflow: hidden;
+    text-align: left;
+    width: 536px;
+}
+
+#login #login-contenido #border-inferior{
+    border-bottom: 1px dashed #B8B8B8;
+    bottom: 55px;
+    height: 1px;
+    position: absolute;
+    left: 0px;
+    width: 99%;
+}
+
+#login #login-contenido #border-inferior1{
+    
+    bottom: 55px;
+    height: 1px;
+    position: absolute;
+    left: 0px;
+    width: 99%;
+}
+
+#login #login-contenido p{
+    text-align: justify;
+}
+
+#login #login-contenido #comunicate{
+    bottom: 0;
+    color: #555555;
+    font: 11px arial;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+#login #login-contenido form{
+    padding: 0px 0px 0px 60px;
+    position: relative;
+}
+
+#login #login-contenido form input[type="button"]{
+    background-color:red;
+    border: solid darkred;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    height: 30px;
+    font: bold 14px arial;
+    margin: 38px 0 0 160px;
+    text-align: center;
+    width: 100px;
+}
+
+#login #login-contenido form input[type="button2"]{
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    height: 20px;
+    font: bold 10px arial;
+    margin: 10px 50px 10px 50px;	
+    text-align: center;
+    width: 100px;
+    border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+#login #login-contenido form .fila{
+    margin: 0px 0px 15px 0px; /* 26 */
+}
+
+#login #login-contenido form label{
+    color: #4f4f4f;
+    font: 13px/23px arial;
+    float: left;
+    text-align: right;
+    padding: 0px 4px 0px 0px;
+    width: 130px;
+}
+
+#login #login-contenido form .tipo-documento{
+    background-color: gainsboro;
+    height: 23px !important;
+    float: left;
+    width: 250px !important;
+}
+
+#login #login-contenido form .tipo-documento-2{
+    height: 23px !important;
+    float: left;
+    width: 200px !important;
+}
+
+#login #login-contenido form .select-chico4{
+	color: #4f4f4f;/* 7b7b7b */
+	float: left;
+	height: 23px;
+	padding: 5px 0px 0px 10px;
+	margin: 0px 5px 0px 0px;
+	width: 155px !important; /*70*/
+}
+
+#login #login-contenido form .select-medio{
+	background-color: gainsboro;
+	color: #4f4f4f;
+	float: left;
+	height: 20px;
+	margin: 0px 10px 0px 0px;
+	width: 115px !important; /*80*/
+}
+
+
+#login #login-contenido form .input-chico3 {
+    border: 2px solid black;
+    font: 12px/23px arial;
+    height: 23px;
+    float: left;
+    padding: 0px 10px;
+    width: 128px;
+    color: #4f4f4f;/* 7b7b7b */
+}
+
+
+#login #login-contenido form .input-chico2 {
+    border: medium none;
+    font: 12px/23px arial;
+    height: 23px;
+    color: #4f4f4f;/* 7b7b7b */
+    float: left;
+    padding: 0px 10px;
+    width: 40px;
+}
+
+#login #login-contenido form .textarea{
+	border: 1px solid #ececec;
+	font: 11px/13px arial;
+	color: #4f4f4f;/* 7b7b7b */
+	margin: 0px -30px;
+}
+
+#login #login-contenido form .tipo-documento span{
+    color: #4f4f4f; /* 7b7b7b */
+    font: 12px/23px arial !important;
+    padding: 0px 0px 0px 12px;
+}
+
+#login #login-contenido form input.grande{
+    float: left;
+    color: #4f4f4f; /* 7b7b7b */;
+    font: 12px/23px arial;
+    padding: 0px 12px 0px 12px;
+    height: 23px;
+    width: 226px;
+}
+
+#txtNumeroTarjeta {
+    border: 2px solid black;    
+}
+
+#login #login-contenido form input.grande1{
+    float: left;
+    color: #4f4f4f; /* 7b7b7b */;
+    font: 12px/23px arial;
+    padding: 0px 12px 0px 12px;
+    height: 23px;
+    width: 245px;
+}
+
+#login #login-contenido #botones-clave{
+        
+    float: left;
+    padding: 0px 0px 0px 6px;
+    width: 92px;
+}
+
+#login #login-contenido #botones-clave div{
+    background-color:grey;
+    color: #343434;
+    display: block;
+    font: 16px/25px 'daxcompact-boldregular';
+    height: 25px;
+    float: left;
+    margin: 0px 5px 5px 0px;
+    text-align: center;
+    width: 25px;
+    cursor:pointer;
+}
+
+#login #login-contenido #botones-clave div:hover{
+    background-color: orange;
+    color: #fff;
+}
+
+#login #login-contenido #botones-clave div.limpiar{
+    color: #fff;
+    font: 12px/25px 'daxcompact-boldregular';
+    width: 55px;
+}
+
+#login #login-contenido #campo-clave{
+    float: left;
+    padding: 0px 0px 0px 25px;
+    width: 120px;
+}
+
+#login #login-contenido #campo-clave p{
+    color: #4f4f4f; /* 7b7b7b */;
+    font: 11px/13px arial;
+    text-align: center;
+   
+}
+
+#login #login-contenido #campo-clave p1{
+    color: #4f4f4f; /* 7b7b7b */;
+    font: 12px/13px arial;
+    text-align: center;
+    padding: 0px 5px 10px;
+}
+
+#login #login-contenido #campo-clave1{
+    float: left;
+    padding: 0px 0px 0px 40px;
+    width: 250px;
+}
+
+#login #login-contenido #campo-clave1 p{
+    color: #4f4f4f; /* 7b7b7b */;
+    font: 12px/13px arial;
+    text-align: center;
+    padding: 0px 5px 10px;
+     
+}
+
+
+
+#login #login-contenido #campo-clave input{
+    border: 2px solid black;
+    height: 23px;
+    padding: 0px 20px;
+    width: 70px;
+    color:#4f4f4f; /* 7b7b7b */;
+}
+
+#login #login-contenido #campo-clave .olvido-clave {
+    padding: 20px 0px 0px 0px;
+    position: relative;
+}
+
+#login #login-contenido #campo-clave div.olvide-clave{
+    color: #ba1113;
+    display: block;
+    font: 12px arial;
+    height: 24px;
+    font: 12px/24px arial;
+    text-align: left;
+    text-decoration: underline;
+    padding: 0px 0px 0px 27px;
+    cursor:pointer;
+}
+
+#login #login-contenido #campo-clave div.clave-internet{
+   
+    color: #2b2b2b;
+    display: block;
+    font: 12px arial;
+    height: 24px;
+    font: 12px/24px arial;
+    text-decoration: underline;
+    padding: 0px 0px 0px 20px;
+    cursor:pointer;
+    width: 200px;
+}
+
+#login #login-contenido #campo-clave .texto-olvide-clave{
+    display: none;
+    position: absolute;
+    right: -100px;
+    top: 2px;
+}
+
+#login #login-contenido #campo-clave .olvido-clave:hover .texto-olvide-clave{
+    display: block;
+}
+
+#login #login-contenido #campo-clave .texto-olvide-clave img{
+    position: absolute;
+    top: 23px;
+    left: -15px;
+}
+
+#login #login-contenido .fila-derecha{
+	background: #e3e3e3;
+	color: #000;
+	height: 30px;
+	float: left;
+	font: 12px/30px arial;
+	margin: 0px 1px 1px 0px;
+	padding: 0px 13px 0px 13px;
+	width: 274px;
+}
+
+#login #login-contenido #campo-clave .texto-olvide-clave div{
+    background: #000;
+    color: #d5d5d5;
+    height: auto;
+    text-align: center;
+    font: 11px/12px arial;
+    padding: 5px 0px;
+    width: 120px;
+}
+
+
+#login #login-contenido .capcha{
+    float: left;
+    padding: 0px 18px 0px 6px;
+}
+
+#login #login-contenido .capcha #srcCaptcha{
+    padding: 0px 0px 8px 0px;
+}
+
+#login #login-contenido .capcha .boton_captcha{
+    color: #ba1113;
+    display: block;
+    font: 12px arial;
+    text-decoration: underline;
+    padding: 3px 0px 2px 22px;
+    cursor:pointer;
+}
+
+#login #login-contenido input.capcha{
+    border: solid black;
+    color: #4f4f4f; /* 7b7b7b */;
+    float: left;
+    font: 12px/23px arial;
+    height: 23px;
+    padding: 0 25px;
+    width: 70px;
+    text-transform: uppercase;
+}
+
+input.mayuscula{
+    text-transform: uppercase;
+}
+
+ul.tipo-documento{
+    width: 217px !important;
+}
+div.cysErrorMsg {
+	background-color: #FFD5D5;
+    border: 1px solid #FF3C3C;
+    color: #4F4F4F;
+    font-size: 12px;
+    list-style: none outside none;
+    margin: 0 auto;
+    padding: 4px;
+    width: 630px;
+    font-family:'Arial';
+}
+
+.formEstandar{
+	width:100%;
+	
+}
+.formEstandar .izq{
+	float:left;
+	width:250px !important;
+	text-align: left;
+	
+}
+.formEstandar .der{
+	float:right;
+	width:250px;
+	padding-left:1px;	
+}
+
+.limpiar:after { content: "."; display: block; height: 0; font-size:0; clear: both; visibility:hidden; }
+.limpiar{ display: inline-block;}
+* html .limpiar { height: 1%; }
+.limpiar{display:block;} 
+.ui-state-default, .ui-widget-content .ui-state-default {
+	border: none; 
+}
