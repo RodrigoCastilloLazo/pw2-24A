@@ -8,13 +8,13 @@ const questions = [
     { question: "Lengua oficial de Brasil", answer: "PORTUGUES" },
     { question: "Elemento químico más abundante en la Tierra", answer: "OXIGENO" },
     { question: "Año de la caída del Muro de Berlín", answer: "1989" },
-    { question: "Monarca actual del Reino Unido", answer: "CARLOS III" }
+    { question: "Campeon Qatar 2022", answer: "ARGENTINA" }
 ];
 
 let selectedQuestion = questions[Math.floor(Math.random() * questions.length)];
 let answer = selectedQuestion.answer;
 let guessedLetters = [];
-let mistakes = 0;
+let mistakes = 1;
 
 document.getElementById('question').innerText += selectedQuestion.question;
 
