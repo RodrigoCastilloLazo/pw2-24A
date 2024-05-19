@@ -1,0 +1,77 @@
+/* Estilos generales */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    width: 350px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.history {
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    height: 50px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 24px;
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+}
+
+button {
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    height: 60px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button:active {
+    background-color: #d4d4d4;
+}
+
+button.equals {
+    grid-column: span 2; /* El botón de igual ocupa dos espacios */
+    background-color: #ff9500;
+    color: #ffffff;
+}
+
+button.equals:active {
+    background-color: #e08900;
+}
