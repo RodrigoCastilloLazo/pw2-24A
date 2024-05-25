@@ -47,7 +47,7 @@
             const time = document.getElementById('eventTime').value;
             const title = document.getElementById('eventTitle').value;
             const description = document.getElementById('eventDescription').value;
-
+    
             const response = await fetch('/event', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -56,7 +56,7 @@
             const result = await response.json();
             alert(result.message);
         };
-
+    
         document.getElementById('viewEventsBtn').onclick = async () => {
             const response = await fetch('/events');
             const result = await response.json();
@@ -64,10 +64,43 @@
             eventsList.innerHTML = '';
             result.events.forEach(event => {
                 const li = document.createElement('li');
-                li.textContent = `${event.date} ${event.time} - ${event.title}`;
+                li.innerHTML = `
+                    ${event.date} ${event.time} - ${event.title}
+                    <span class="buttons">
+                        <button onclick="editEvent('${event.date}', '${event.time}')">Editar</button>
+                        <button onclick="deleteEvent('${event.date}', '${event.time}')">Eliminar</button>
+                    </span>
+                `;
                 eventsList.appendChild(li);
             });
         };
+    
+        async function editEvent(date, time) {
+            const newTitle = prompt('Ingrese el nuevo título:');
+            const newDescription = prompt('Ingrese la nueva descripción:');
+            if (newTitle && newDescription) {
+                const response = await fetch('/event', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ date, time, title: newTitle, description: newDescription })
+                });
+                const result = await response.json();
+                alert(result.message);
+                document.getElementById('viewEventsBtn').click();
+            }
+        }
+    
+        async function deleteEvent(date, time) {
+            const response = await fetch('/event', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ date, time })
+            });
+            const result = await response.json();
+            alert(result.message);
+            document.getElementById('viewEventsBtn').click();
+        }
     </script>
+    
 </body>
 </html>
