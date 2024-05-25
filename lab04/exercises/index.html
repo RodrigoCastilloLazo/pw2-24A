@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Personal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agenda Personal</h1>
+
+        <section class="form-section">
+            <h2>Crear Evento</h2>
+            <form id="createEventForm">
+                <div class="form-group">
+                    <label for="eventDate">Fecha</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventTime">Hora</label>
+                    <input type="time" id="eventTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventTitle">Título</label>
+                    <input type="text" id="eventTitle" placeholder="Título" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Descripción</label>
+                    <textarea id="eventDescription" placeholder="Descripción"></textarea>
+                </div>
+                <button type="submit">Crear Evento</button>
+            </form>
+        </section>
+
+        <section class="events-section">
+            <h2>Ver Eventos</h2>
+            <button id="viewEventsBtn">Ver Eventos</button>
+            <ul id="eventsList"></ul>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('createEventForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const date = document.getElementById('eventDate').value;
+            const time = document.getElementById('eventTime').value;
+            const title = document.getElementById('eventTitle').value;
+            const description = document.getElementById('eventDescription').value;
+
+            const response = await fetch('/event', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ date, time, title, description })
+            });
+            const result = await response.json();
+            alert(result.message);
+        };
+
+        document.getElementById('viewEventsBtn').onclick = async () => {
+            const response = await fetch('/events');
+            const result = await response.json();
+            const eventsList = document.getElementById('eventsList');
+            eventsList.innerHTML = '';
+            result.events.forEach(event => {
+                const li = document.createElement('li');
+                li.textContent = `${event.date} ${event.time} - ${event.title}`;
+                eventsList.appendChild(li);
+            });
+        };
+    </script>
+</body>
+</html>
