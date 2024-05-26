@@ -38,6 +38,15 @@
             <button id="viewEventsBtn">Ver Eventos</button>
             <ul id="eventsList"></ul>
         </section>
+
+        <section class="event-details" id="eventDetails">
+            <h2>Detalles del Evento</h2>
+            <p><strong>Fecha:</strong> <span id="detailDate"></span></p>
+            <p><strong>Hora:</strong> <span id="detailTime"></span></p>
+            <p><strong>Título:</strong> <span id="detailTitle"></span></p>
+            <p><strong>Descripción:</strong> <span id="detailDescription"></span></p>
+            <button onclick="hideEventDetails()">Cerrar</button>
+        </section>
     </div>
 
     <script>
@@ -48,6 +57,10 @@
             const title = document.getElementById('eventTitle').value;
             const description = document.getElementById('eventDescription').value;
     
+            if (!validateDateTime(date, time)) {
+                alert('La fecha y la hora no pueden ser anteriores a la actual.');
+                return;
+            }
             const response = await fetch('/event', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -71,10 +84,24 @@
                         <button onclick="deleteEvent('${event.date}', '${event.time}')">Eliminar</button>
                     </span>
                 `;
+                
+                li.onclick = () => showEventDetails(event)
                 eventsList.appendChild(li);
             });
         };
-    
+        function showEventDetails(event) {
+            document.getElementById('detailDate').textContent = event.date;
+            document.getElementById('detailTime').textContent = event.time;
+            document.getElementById('detailTitle').textContent = event.title;
+            document.getElementById('detailDescription').textContent = event.description;
+            document.getElementById('eventDetails').style.display = 'block';
+        }
+        
+
+        function hideEventDetails() {
+            document.getElementById('eventDetails').style.display = 'none';
+        }
+
         async function editEvent(date, time) {
             const newTitle = prompt('Ingrese el nuevo título:');
             const newDescription = prompt('Ingrese la nueva descripción:');
@@ -99,6 +126,11 @@
             const result = await response.json();
             alert(result.message);
             document.getElementById('viewEventsBtn').click();
+        }
+        function validateDateTime(date, time) {
+            const eventDateTime = new Date(`${date}T${time}`);
+            const now = new Date();
+            return eventDateTime > now;
         }
     </script>
     

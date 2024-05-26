@@ -72,14 +72,16 @@ app.get('/events', (req, res) => {
             fs.readdirSync(datePath).forEach(eventFile => {
                 const eventPath = path.join(datePath, eventFile);
                 const [time] = eventFile.split('.txt');
-                const [title] = fs.readFileSync(eventPath, 'utf8').split('\n');
-                events.push({ date: dateDir, time, title });
+                const [title, ...descriptionArray] = fs.readFileSync(eventPath, 'utf8').split('\n');
+                const description = descriptionArray.join('\n');
+                events.push({ date: dateDir, time, title, description });
             });
         }
     });
 
     res.status(200).json({ events });
 });
+
 
 app.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`);
