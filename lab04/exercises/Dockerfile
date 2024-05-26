@@ -1,20 +1,19 @@
-# Etapa 1: Construir la aplicación Node.js
-FROM node:12-alpine3.12 AS build
+FROM node:12-buster-slim AS build
 
-# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copia los archivos de la aplicación
+COPY package*.json ./
+RUN npm install
 COPY . .
 
-# Etapa 2: Configurar Nginx para servir la aplicación Node.js
-FROM nginx:1.19.0-alpine AS prod-stage
+FROM nginx:1.19
 
-# Copiar los archivos de la etapa de construcción al directorio de Nginx
-COPY --from=build /app /usr/share/nginx/html
+RUN apt-get update && apt-get install -y nodejs npm
 
-# Expone el puerto en el que Nginx estará escuchando
-EXPOSE 80
+COPY --from=build /app /app
 
-# Comando para iniciar Nginx
-CMD ["nginx", "-g", "daemon off;"]
+COPY nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 80 3000
+
+CMD sh -c "node /app/index.js & nginx -g 'daemon off;'"
